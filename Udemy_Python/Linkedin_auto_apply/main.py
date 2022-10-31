@@ -1,13 +1,23 @@
 ## 링크드인 자동지원 봇 만들기
 
 # 함수호출
+import imp
+from re import T
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.common.by import By
 
-email = ''
-password = 'test'
+# 요소를 하나도 찾지 못했을 때, 예외를 발생시키기
+from selenium.common.exceptions import NoSuchElementException
+
+import os
+from dotenv import load_dotenv
+load_dotenv(verbose=True, override=True)
+
+email = os.environ['email']
+password = os.environ['password']
+phone = os.environ['phone']
 
 path = '/Users/sky/Python/chromedriver'
 driver = webdriver.Chrome(path)
@@ -27,6 +37,15 @@ password_field.send_keys(password)
 
 # 엔터
 password_field.send_keys(Keys.ENTER)
+
+# 대기시간 설정
+# time.sleep(5)
+
+# 채용공고를 저장하고, 회사를 팔로우 하기
+
+all_list = driver.find_element(By.CSS_SELECTOR, '')
+
+    
 
 
 
