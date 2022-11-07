@@ -1,8 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
-### 폴더무시 ###
-**data/
+.chromedriver
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
